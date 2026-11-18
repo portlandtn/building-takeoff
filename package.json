@@ -1,0 +1,26 @@
+{
+  "name": "jones-building-calculator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "vendor": "node scripts/vendor.mjs",
+    "check:vendor": "node scripts/check-vendor.mjs",
+    "check:public": "node scripts/public-audit.mjs",
+    "check:staged": "node scripts/public-audit.mjs --staged",
+    "build:cloudflare": "node scripts/build-cloudflare.mjs",
+    "check:cloudflare": "wrangler pages functions build functions --outdir=.local/pages-functions"
+  },
+  "dependencies": {
+    "exceljs": "4.4.0",
+    "three": "0.180.0"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "wrangler": "4.145.0"
+  }
+}
