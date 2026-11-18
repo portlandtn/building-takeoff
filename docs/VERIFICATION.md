@@ -6,7 +6,7 @@ Preparation date: 2026-11-17. These results describe automated and scripted chec
 
 | Check | Result |
 | --- | --- |
-| Node runtime | 22.23.4; npm 10.9.9. This is below the `engines` requirement of Node 24, which CI and the Pages build use; the checks have not been repeated on Node 24 |
+| Node runtime | Local checks: 22.23.4; npm 10.9.9, below the `engines` requirement of Node 24. The GitHub Actions workflow then repeated install, tests, vendor, publication, and Cloudflare build checks on Node 24 for the first application commit, and passed |
 | Clean installation | `npm ci --ignore-scripts` completed |
 | Unit and integration tests | 30 passing, zero failures |
 | Bundled library consistency | Six library/license files match installed pinned packages byte-for-byte |
@@ -30,4 +30,4 @@ Not exercised: narrow and mobile layouts, keyboard-only use, browsers other than
 
 No separate secret scanner was run; the publication check is a heuristic. No independent code review, manufacturer review, load test, or engineering certification was performed. Archive guards bound declared and actual expansion as described in `SECURITY.md` but are not a sandbox.
 
-The repository starts from a single initial commit, so there is no earlier history to scan. An original-code license has not been selected. Repeat staged-content and history checks for future changes.
+The repository's history began as the hosting service's stub initial commit (a one-line README) followed by one commit adding the application, so there is no earlier history to scan. An original-code license has not been selected. Repeat staged-content and history checks for future changes.
